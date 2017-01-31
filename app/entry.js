@@ -6,7 +6,7 @@ const path = require('path');
 const angular = require('angular');
 const camelcase = require('camelcase');
 const pascalcase = require('pascalcase');
-const uiRouter = require('ui-router');
+const uiRouter = require('angular-ui-router');
 const angularTouch = require('angular-touch');
 const angularAnimate = require('angular-animate');
 
