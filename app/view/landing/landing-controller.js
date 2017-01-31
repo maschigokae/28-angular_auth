@@ -2,7 +2,7 @@
 
 require('./_landing.scss');
 
-module.exports = ['$log', '$location', '$rootscope', 'authService', LandingController];
+module.exports = ['$log', '$location', 'authService', LandingController];
 
 function LandingController($log, $location, authService) {
   $log.debug('LandingController');
