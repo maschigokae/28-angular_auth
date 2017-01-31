@@ -109,5 +109,9 @@ tags
 
 build
 .env
+
 29-angular_crud.md
 wireframes-29
+
+30-component_bindings.md
+wireframes-30
