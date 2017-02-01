@@ -32,8 +32,23 @@ function galleryService($q, $log, $http, authService) {
       return gallery;
     })
     .catch( err => {
-      $log.error(err.message);
+      $log.error('ERROR:', err.message);
       return $q.reject(err);
+    });
+  };
+
+  service.deleteGalleries = function(galleryID, galleryData) {
+    $log.debug('galleryService.deleteGalleries()');
+
+    return authService.getToken()
+    .then( token => {
+      let url = `${__API_URL__}/api/gallery/${galleryID}`;
+      let config = {
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      };
     });
   };
 
