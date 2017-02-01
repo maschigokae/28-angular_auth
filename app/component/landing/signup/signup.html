@@ -1,0 +1,25 @@
+<section class="signup">
+  <form class="signup-form"
+    ng-submit="signupControl.signup(signupControl.user)"
+    novalidate>
+
+    <input class="input-std"
+      type="text"
+      placeholder="name"
+      ng-minlength="4"
+      ng-model="signupControl.user.username"
+      required>
+    <input class="input-std"
+      type="email"
+      placeholder="email"
+      ng-model="signupControl.user.email">
+    <input class="input-std"
+      type="password"
+      placeholder="password"
+      ng-minlength="8"
+      ng-model="signupControl.user.password"
+      required>
+
+    <input type="submit" class="button-std" value="create account">
+  </form>
+</section>
