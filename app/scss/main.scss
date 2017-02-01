@@ -1,5 +1,5 @@
-// TODO: BUILD OUT MAIN STYLING
+// BASE STYLES AND VARS
 
-html, body {
-  font-family: monospace;
-}
+@import "lib/base/reset";
+// @import "lib/theme/vars";
+@import "lib/base/base";
