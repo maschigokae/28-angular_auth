@@ -50,7 +50,34 @@ function galleryService($q, $log, $http, authService) {
         }
       };
     });
+    // TODO: BUILD OUT DELETE FUNCTIONALITY
+  };
+
+  service.fetchGalleries = function() {
+    $log.debug('galleryService.fetchGalleries()');
+
+    return authService.getToken()
+    .then( token => {
+      let url = `${__API_URL__}/api/gallery`;
+      let config = {
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      };
+
+      return $http.get(url, config);
+    })
+    .then( response => {
+      $log.log('success: galleries retrieved');
+      service.galleries = response.data;
+      return service.galleries;
+    })
+    .catch( err => {
+      $log.error(err.message);
+      return $q.reject(err);
+    });
   };
 
   return service;
-}
+};
