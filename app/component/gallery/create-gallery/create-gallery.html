@@ -1,3 +1,27 @@
-<section>
-  <!-- TODO: BUILD OUT MARKUP FOR CREATE GALLERY COMPONENT -->
+<section class="create-gallery">
+
+  <form name="createGalleryForm"
+    class="gallery-form"
+    ng-submit="createGalleryControl.createGallery()">
+
+    <fieldset>
+      <label for="name">name:</label>
+      <input type="text"
+        class="input-std"
+        name="name"
+        ng-model="createGalleryControl.gallery.name"
+        required>
+    </fieldset>
+
+    <fieldset>
+      <label for="desc">description:</label>
+      <input type="text"
+        class="input-std"
+        name="desc"
+        ng-model="createGalleryControl.gallery.desc"
+        required>
+    </fieldset>
+
+    <button class="button-std" type="submit">create gallery</button>
+  </form>
 </section>
