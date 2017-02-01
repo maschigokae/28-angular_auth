@@ -1,3 +1,10 @@
-<nav>
-  <!-- TODO: BUILD OUT NAVBAR MARKUP -->
-</nav>
+<section class="navbar">
+  <img src="../../../assets/img/cf-logo.png" alt="cfgram logo">
+  <h1>cfgram</h1>
+
+  <nav>
+    <div ng-hide="navbarControl.hideButtons">
+      <button class="button-std" ng-click="navbarControl.logout()">logout</button>
+    </div>
+  </nav>
+</section>
