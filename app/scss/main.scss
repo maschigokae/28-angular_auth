@@ -1,5 +1,9 @@
 // BASE STYLES AND VARS
-
 @import "lib/base/reset";
 @import "lib/theme/vars";
 @import "lib/base/base";
+
+// MAIN LAYOUT CONTAINERS
+@import "lib/layout/header";
+@import "lib/layout/footer";
+@import "lib/layout/layout";
