@@ -2,16 +2,20 @@
   <div class="join-container" ng-if="landingControl.showSignup">
     <div class="join-inner">
       <signup></signup>
-      <p>have an account?</p>
-      <a href="/#/join#login" ng-click="landingControl.showSignup=false">sign in</a>
+      <p>
+        <span>have an account?</span>
+        <a href="/#/join#login" ng-click="landingControl.showSignup=false">sign in</a>
+      </p>
     </div>
   </div>
 
   <div class="join-container" ng-if="!landingControl.showSignup">
     <div class="join-inner">
       <login></login>
-      <p>new to cfgram?</p>
-      <a href="/#/join#signup" ng-click="landingControl.showSignup=true">register here</a>
+      <p>
+        <span>new to cfgram?</span>
+        <a href="/#/join#signup" ng-click="landingControl.showSignup=true">register here</a>
+      </p>
     </div>
   </div>
 </section>

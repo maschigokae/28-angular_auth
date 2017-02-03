@@ -1,1 +1,36 @@
 // TODO: BUILD OUT HOME-SPECIFIC STYLING
+
+@import "../../scss/lib/theme/vars";
+
+.home {
+  clear: both;
+  overflow: auto;
+
+  h2 {
+    font-size: 1.5em;
+    margin: 0 0 20px 0;
+  }
+
+  li {
+    line-height: 1.5;
+  }
+
+  .gallery-name {
+    margin: 2.8% 0 0 0;
+  }
+
+  .gallery-desc {
+    border-bottom: solid 1px $brand-secondary;
+  }
+
+  span {
+    color: $brand-primary;
+    display: inline-block;
+    width: 90px;
+    float: left;
+    &:last-child {
+      color: $button-primary;
+      width: calc(100% - 95px);
+    }
+  }
+}

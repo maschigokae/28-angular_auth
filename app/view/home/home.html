@@ -5,8 +5,12 @@
 
   <ul>
     <li ng-repeat="gallery in homeControl.galleries">
-      <span>name: {{ gallery.name }}</span>
-      <span>description: {{ gallery.desc }}</span>
+      <div>
+        <span class="gallery-name">name:</span><span class="gallery-name">{{ gallery.name }}</span>
+      </div>
+      <div>
+        <span>description:</span><span class="gallery-desc">{{ gallery.desc }}</span>
+      </div>
     </li>
   </ul>
 </section>
