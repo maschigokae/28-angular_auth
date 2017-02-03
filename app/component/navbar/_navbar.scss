@@ -1,1 +1,24 @@
-// TODO: BUILD OUT NAVBAR COMPONENT STYLING
+@import "../../scss/lib/theme/vars";
+
+.navbar {
+
+  img {
+    width: 6vw;
+    float: left;
+    margin: 2% 1% 0 3%;
+  }
+
+  h1 {
+    float: left;
+    font-family: monospace;
+    font-size: 3.5vw;
+    color: $white;
+    margin: 3.2% 1% 1% 0;
+  }
+
+  button {
+    float: right;
+    margin: 2.5% 3.5% 0 0;
+    font-size: 2.5vw;
+  }
+}

@@ -1,4 +1,5 @@
 <section class="login-form">
+  <h2>login to your cfgram account.</h2>
   <form name="loginForm"
     ng-submit="loginControl.login()"
     novalidate>
@@ -6,17 +7,17 @@
     <div ng-class="{ 'error': loginForm.username.$invalid, 'success': loginForm.username.$valid }">
       <input type="text"
         name="username"
-        placeholder="username"
+        placeholder=" username"
         ng-minlength="4"
         ng-model="loginControl.user.username"
         required>
-      <input type="text" placeholder="email">
+      <!-- <input type="text" placeholder="email"> -->
     </div>
 
     <div ng-class="{ 'error': loginForm.password.$invalid && loginForm.$submitted, 'success': loginForm.password.$valid }">
       <input type="password" name="password"
         ng-disabled="loginForm.username.$invalid"
-        placeholder="password"
+        placeholder=" password"
         ng-minlength="8"
         ng-model="loginControl.user.password"
         required>

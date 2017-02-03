@@ -1,5 +1,12 @@
-// TODO: BUILD OUT MAIN STYLING
+// BASE STYLES AND VARS
+@import "lib/base/reset";
+@import "lib/theme/vars";
+@import "lib/base/base";
 
-html, body {
-  font-family: monospace;
-}
+// MAIN LAYOUT CONTAINERS
+@import "lib/layout/header";
+@import "lib/layout/footer";
+@import "lib/layout/layout";
+
+// COMPONENTS
+@import "../component/landing/login/login";

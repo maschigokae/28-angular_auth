@@ -1,1 +1,13 @@
-// TODO: BUILD OUT LANDING-SPECIFIC STYLING
+@import "../../scss/lib/theme/vars";
+
+.join-inner {
+
+  p {
+    margin: 35px 6px 1.5% 1.2%;
+    text-align: right;
+  }
+
+  a {
+    margin: 1.5% 0 1.5% 1.2%;
+  }
+}

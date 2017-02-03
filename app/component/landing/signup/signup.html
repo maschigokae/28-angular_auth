@@ -1,25 +1,26 @@
 <section class="signup">
+  <h2>register for a cfgram account.</h2>
   <form class="signup-form"
     ng-submit="signupControl.signup(signupControl.user)"
     novalidate>
 
     <input class="input-std"
       type="text"
-      placeholder="name"
+      placeholder=" name"
       ng-minlength="4"
       ng-model="signupControl.user.username"
       required>
     <input class="input-std"
       type="email"
-      placeholder="email"
+      placeholder=" email"
       ng-model="signupControl.user.email">
     <input class="input-std"
       type="password"
-      placeholder="password"
+      placeholder=" password"
       ng-minlength="8"
       ng-model="signupControl.user.password"
       required>
 
-    <input type="submit" class="button-std" value="create account">
+    <button type="submit" class="button-std">create account</button>
   </form>
 </section>
