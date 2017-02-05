@@ -17,9 +17,12 @@
   </edit-gallery>
 
   <button
-    class="button-std"
-    ng-click="galleryItemControl.showEditGallery = !galleryItemControl.showEditGallery">edit</button>
+  class="button-small"
+  ng-click="galleryItemControl.deleteGallery()"
+  ng-show="!galleryItemControl.showEditGallery">delete</button>
   <button
-    class="button-std"
-    ng-click="galleryItemControl.deleteGallery()">delete</button>
+    class="button-small"
+    ng-click="galleryItemControl.showEditGallery = !galleryItemControl.showEditGallery"
+    ng-show="!galleryItemControl.showEditGallery">edit</button>
+  <div class="clearfix"></div>
 </li>
