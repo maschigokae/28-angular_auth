@@ -74,7 +74,41 @@ function galleryService($q, $log, $http, authService) {
       return service.galleries;
     })
     .catch( err => {
-      $log.error(err.message);
+      $log.error('ERROR:', err.message);
+      return $q.reject(err);
+    });
+  };
+
+  service.updateGallery = function(galleryID, galleryData) {
+    $log.debug('galleryService.updateGallery()');
+
+    return authService.getToken()
+    .then( token => {
+      let url = `${__API_URL__}/api/gallery/${galleryID}`;
+      let config = {
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      };
+
+      return $http.put(url, galleryData, config);
+    })
+    .then( response => {
+      for (let i = 0; i < service.galleries.length; i++) {
+        let current = service.galleries[i];
+
+        if (current._id === galleryID) {
+          service.galleries[i] = response.data;
+          break;
+        }
+      }
+
+      return response.data;
+    })
+    .catch( err => {
+      $log.error('ERROR:', err.message);
       return $q.reject(err);
     });
   };
