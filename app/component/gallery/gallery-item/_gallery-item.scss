@@ -1,0 +1,20 @@
+@import "../../../scss/lib/theme/vars";
+
+.gallery-item {
+
+  .gallery-name {
+    margin: 2.8% 0 0 0;
+  }
+
+  .gallery-desc {
+    border-bottom: solid 1px $brand-secondary;
+  }
+
+  .button-small {
+    margin: 8px 5px 0 5px;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    float: right;
+  }
+}
