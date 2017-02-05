@@ -1,3 +1,5 @@
-<section class="thumbnail">
-  <!-- TODO: BUILD OUT MARKUP FOR THUMBNAIL COMPONENT -->
-</section>
+<div class="thumbnail">
+  <img ng-src="{{ thumbnailControl.photo.imageURI }}" alt="{{ thumbnailControl.photo.desc }}">
+
+  <span class="button-std" ng-click="thumbnailControl.deletePhoto()">delete photo</span>
+</div>
