@@ -1,1 +1,16 @@
-// TODO: ADD STYLES FOR EDIT GALLERY COMPONENT
+@import "../../../scss/lib/theme/vars";
+
+.edit-gallery {
+
+  fieldset {
+    margin: 12px 0 12px 0;
+  }
+
+  .input-std {
+    width: calc(100% - 108px);
+  }
+
+  .button-std {
+    float: right;
+  }
+}
