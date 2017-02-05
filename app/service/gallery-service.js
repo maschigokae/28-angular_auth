@@ -132,7 +132,7 @@ function galleryService($q, $log, $http, authService) {
         let current = service.galleries[i];
 
         if (current._id === galleryID) {
-          service.galleries[i] = response.data;
+          service.galleries.splice(i, 1);
           break;
         }
       }
