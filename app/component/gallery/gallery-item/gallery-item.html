@@ -1,3 +1,25 @@
 <li class="gallery-item">
-  <!-- TODO: BUILD OUT MARKUP FOR GALLERY ITEM COMPONENT -->
+  <div class="current-item" ng-if="!galleryItemControl.showEditGallery">
+    <div>
+      <span class="item-label">name:</span>
+      <span>{{ galleryItemControl.gallery.name }}</span>
+    </div>
+
+    <div>
+      <span class="item-label">description:</span>
+      <span>{{ galleryItemControl.gallery.desc }}</span>
+    </div>
+  </div>
+
+  <edit-gallery
+    ng-if="galleryItemControl.showEditGallery"
+    gallery="galleryItemControl.gallery">
+  </edit-gallery>
+
+  <button
+    class="button-std"
+    ng-click="galleryItemControl.showEditGallery = !galleryItemControl.showEditGallery">edit</button>
+  <button
+    class="button-std"
+    ng-click="galleryItemControl.deleteGallery()">delete</button>
 </li>
