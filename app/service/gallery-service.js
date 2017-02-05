@@ -113,5 +113,35 @@ function galleryService($q, $log, $http, authService) {
     });
   };
 
+  service.deleteGallery = function(galleryID) {
+    $log.debug('galleryService.deleteGallery()');
+
+    return authService.getToken()
+    .then( token => {
+      let url = `${__API_URL__}/api/gallery/${galleryID}`;
+      let config = {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      };
+
+      return $http.delete(url, config);
+    })
+    .then( response => {
+      for (let i = 0; i < service.galleries.length; i++) {
+        let current = service.galleries[i];
+
+        if (current._id === galleryID) {
+          service.galleries[i] = response.data;
+          break;
+        }
+      }
+    })
+    .catch( err => {
+      $log.error('ERROR:', err.message);
+      return $q.reject(err);
+    });
+  };
+
   return service;
 };
