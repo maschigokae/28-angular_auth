@@ -1,1 +1,11 @@
 // TODO: BUILD OUT THUMBNAIL CONTAINER STYLES
+@import "../../../scss/lib/theme/vars";
+
+.thumbnail-container {
+
+  h3 {
+    color: $brand-primary;
+    font-weight: 700;
+    margin: 2.5% 0 0 0;
+  }
+}

@@ -1,1 +1,29 @@
 // TODO: BUILD OUT UPLOAD PHOTO STYLES
+@import "../../../scss/lib/theme/vars";
+
+.upload-photo {
+
+  margin: 0 0 30px 0;
+
+  h4 {
+    margin: 12px 0 0 0;
+  }
+
+  .input-std {
+    width: 94%;
+    margin: 15px 10px 0 0;
+  }
+
+  .select-file {
+
+    color: $button-primary;
+    text-decoration: underline;
+    line-height: 3;
+    max-width: 160px;
+
+    &:hover {
+      color: $brand-primary;
+      cursor: pointer;
+    }
+  }
+}

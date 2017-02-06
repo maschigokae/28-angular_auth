@@ -1,1 +1,25 @@
 // TODO: BUILD OUT THUMBNAIL STYLES
+@import "../../../scss/lib/theme/vars";
+
+.thumbnail {
+
+  display: inline-block;
+  margin: $gutter-sm 0 $gutter-std 0;
+
+  img {
+    max-width: 100%;
+  }
+
+  .delete-photo {
+
+    color: $button-primary;
+    text-decoration: underline;
+    line-height: 2;
+    float: right;
+
+    &:hover {
+      color: $brand-primary;
+      cursor: pointer;
+    }
+  }
+}
