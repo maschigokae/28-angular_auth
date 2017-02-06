@@ -3,7 +3,20 @@
 
   <create-gallery></create-gallery>
 
-  <ul>
-    <gallery-item ng-repeat="item in homeControl.galleries" gallery="item"></gallery-item>
-  </ul>
+  <div class="gallery-item-container">
+    <ul>
+      <gallery-item
+        ng-repeat="item in homeControl.galleries"
+        gallery="item"
+        delete-done="homeControl.galleryDeleteDone(galleryData)"
+        ng-click="homeControl.currentGallery = item">
+      </gallery-item>
+    </ul>
+  </div>
+
+  <thumbnail-container
+    ng-if="homeControl.currentGallery"
+    gallery="homeControl.currentGallery">
+  </thumbnail-container>
+
 </section>
