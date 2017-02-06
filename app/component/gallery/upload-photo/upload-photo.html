@@ -1,0 +1,31 @@
+<section class="upload-photo">
+  <form ng-submit="uploadPhotoControl.uploadPhoto()" novalidate>
+
+    <h4>upload a photo</h4>
+
+    <fieldset>
+      <input
+        class="input-std"
+        type="text"
+        ng-model="uploadPhotoControl.photo.name"
+        placeholder="name">
+
+      <input
+        class="input-std"
+        type="text"
+        ng-model="uploadPhotoControl.photo.desc"
+        placeholder="description">
+    </fieldset>
+
+    <div>
+      <button class="button-std">upload</button>
+
+      <p
+        class="select-file"
+        ngf-select
+        ng-model="uploadPhotoControl.photo.file">
+        select a file to upload
+      </p>
+    </div>
+  </form>
+</section>
