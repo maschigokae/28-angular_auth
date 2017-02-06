@@ -7,7 +7,7 @@ function photoService($q, $log, $http, Upload, authService) {
 
   let service = {};
 
-  service.uploadGalleryPhoto = function(galleryData, photoData) {
+  service.uploadGalleryPhoto = function(galleryData, picData) {
     $log.debug('photoService.uploadGalleryPhoto()');
 
     return authService.getToken()
@@ -23,14 +23,14 @@ function photoService($q, $log, $http, Upload, authService) {
         headers,
         method: 'POST',
         data: {
-          name: photoData.name,
-          desc: photoData.desc,
-          file: photoData.file
+          name: picData.name,
+          desc: picData.desc,
+          file: picData.file
         }
       });
     })
     .then( response => {
-      galleryData.photos.unshift(response.data);
+      galleryData.pics.unshift(response.data);
       return response.data;
     })
     .catch( err => {

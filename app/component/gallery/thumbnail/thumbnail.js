@@ -7,7 +7,7 @@ module.exports = {
   controller: ['$log', 'photoService', ThumbnailController],
   controllerAs: 'thumbnailControl',
   bindings: {
-    photo: '<'
+    pic: '<'
   }
 };
 
