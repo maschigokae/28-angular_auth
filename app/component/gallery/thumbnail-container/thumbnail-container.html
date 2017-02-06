@@ -4,6 +4,10 @@
   <upload-photo gallery="thumbnailContainerControl.gallery"></upload-photo>
 
   <div>
-    <thumbnail ng-repeat="file in thumbnailContainerControl.gallery.pics" pic="file"><thumbnail>
+    <thumbnail
+      ng-repeat="file in thumbnailContainerControl.gallery.pics"
+      pic="file"
+      gallery="thumbnailContainerControl.gallery">
+    </thumbnail>
   </div>
 </div>
