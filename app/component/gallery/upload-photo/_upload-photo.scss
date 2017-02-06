@@ -14,16 +14,27 @@
     margin: 15px 10px 0 0;
   }
 
+  div {
+    margin: 0 2% 0 0;
+  }
+
   .select-file {
 
+    display: inline-block;
+    margin: 8px 0 0 0;
     color: $button-primary;
     text-decoration: underline;
     line-height: 3;
-    max-width: 160px;
+    float: right;
 
     &:hover {
       color: $brand-primary;
       cursor: pointer;
     }
+  }
+
+  .button-std {
+    margin: 15px 0.5% 30px 12px;
+    float: right;
   }
 }
