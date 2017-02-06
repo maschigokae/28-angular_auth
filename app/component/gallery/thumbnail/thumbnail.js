@@ -18,6 +18,6 @@ function ThumbnailController($log, photoService) {
   this.deletePhoto = function() {
     $log.debug('thumbnailControl.deletePhoto()');
 
-    photoService.deletePhoto(this.gallery._id, this.pic._id);
+    photoService.deletePhoto(this.gallery, this.pic._id);
   };
 };
