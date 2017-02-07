@@ -2,7 +2,10 @@
   "name": "28-angular_auth",
   "version": "1.0.0",
   "description": "",
-  "main": "karma.config.js",
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "lint": "eslint *.js app/*.js",
     "build": "./node_modules/webpack/bin/webpack.js",
