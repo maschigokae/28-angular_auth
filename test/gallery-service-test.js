@@ -34,7 +34,11 @@ describe('gallery service', function() {
         pics: []
       });
 
-      this.galleryService.createGallery(galleryData);
+      this.galleryService.createGallery(galleryData)
+      .then( gallery => {
+        expect(gallery.name).toEqual('example gallery');
+        expect(gallery.pics).toEqual([]);
+      })
       this.$httpBackend.flush();
       this.$rootScope.$apply();
     });
