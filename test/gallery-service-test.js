@@ -40,6 +40,45 @@ describe('gallery service', function() {
     });
   });
 
+  describe('galleryService.fetchGalleries()', () => {
+    it('should return all galleries', () => {
+
+      let headers = {
+        Authorization: 'Bearer test-token',
+        Accept: 'application/json'
+      };
+
+      this.$httpBackend.expectGET('http://localhost:8000/api/gallery', headers)
+      .respond(200);
+
+      this.galleryService.fetchGalleries();
+      this.$httpBackend.flush();
+      this.$rootScope.$apply();
+    });
+  });
+
+  describe('galleryService.updateGallery()', () => {
+    it('should return an updated gallery', () => {
+      let updatedGalleryData = {
+        name: 'updated gallery',
+        desc: 'updated description',
+      };
+
+      let headers = {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: 'Bearer test-token'
+      };
+
+      this.$httpBackend.expectPUT('http://localhost:8000/api/gallery/testid', updatedGalleryData, headers)
+      .respond(200);
+
+      this.galleryService.updateGallery('testid', updatedGalleryData);
+      this.$httpBackend.flush();
+      this.$rootScope.$apply();
+    });
+  });
+
   describe('galleryService.deleteGallery()', () => {
     it('should delete a gallery', () => {
       let galleryID = 'testid';
