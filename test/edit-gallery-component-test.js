@@ -26,4 +26,39 @@ describe('edit gallery component', function() {
 
     this.$rootScope.$apply();
   });
+
+  describe('editGalleryControl.updateGallery()', () => {
+    it('should make a valid PUT request', () => {
+      let url = `${__API_URL__}/api/gallery/1234567890`;
+
+      let headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer test-token'
+      };
+
+      this.$httpBackend.expectPUT(url, {
+        _id: '1234567890',
+        name: 'updated gallery name',
+        desc: 'updated gallery description'
+      }, headers).respond(200);
+
+      let mockBindings = {
+        gallery: {
+          _id: '1234567890',
+          name: 'updated gallery name',
+          desc: 'updated gallery description'
+        }
+      };
+
+      let editGalleryControl = this.$componentController('editGallery', null, mockBindings);
+
+      editGalleryControl.gallery.name = 'updated gallery name';
+      editGalleryControl.gallery.desc = 'updated gallery description';
+      editGalleryControl.updateGallery();
+
+      this.$httpBackend.flush();
+      this.$rootScope.$apply();
+    });
+  });
 });
