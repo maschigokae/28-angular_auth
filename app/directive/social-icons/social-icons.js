@@ -1,5 +1,7 @@
 'use strict';
 
+require('./_social-icons.scss');
+
 module.exports = function() {
   return {
     restrict: 'EAC',
