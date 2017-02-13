@@ -1,0 +1,23 @@
+.footer-icons {
+  h2 {
+    line-height: 2;
+    margin: 0 0 0 20px;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 0 10px 15px;
+    width: 57px;
+    height: 57px;
+  }
+
+  .facebook {
+    background: url('../../../assets/img/social-icons.png') 0 0;
+  }
+  .twitter {
+    background: url('../../../assets/img/social-icons.png') -73px 0;
+  }
+  .instagram {
+    background: url('../../../assets/img/social-icons.png') -292px 0;
+  }
+}
