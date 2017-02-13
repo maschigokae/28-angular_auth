@@ -1,6 +1,6 @@
-<nav>
+<nav class="footer-icons">
   <h2>{{ socialIconsControl.title }}</h2>
   <ul>
-    <li class="social-icon" ng-repeat="icon in socialIconsControl.icons">{{ icon }}</li>
+    <li ng-repeat="icon in socialIconsControl.icons" class="{{icon}}"></li>
   </ul>
 </nav>
