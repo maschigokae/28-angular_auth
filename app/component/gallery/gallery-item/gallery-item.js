@@ -15,6 +15,13 @@ function GalleryItemController($log, galleryService) {
   $log.debug('GalleryItemController');
 
   this.showEditGallery = false;
+  this.limitFullDesc = 35;
+  this.limitedDesc = true;
+
+  this.expandGalleryDesc = function() {
+    this.limitFullDesc = 1000;
+    this.limitedDesc = false;
+  }
 
   this.deleteGallery = function() {
     galleryService.deleteGallery(this.gallery._id);

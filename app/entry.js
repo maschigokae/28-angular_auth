@@ -37,3 +37,17 @@ context.keys().forEach( fileName => {
   let module = context(fileName);
   cfgram.component(name, module);
 });
+
+context = require.context('./directive/', true, /\.js$/);
+context.keys().forEach( fileName => {
+  let name = camelcase(path.basename(fileName, '.js'));
+  let module = context(fileName);
+  cfgram.directive(name, module);
+});
+
+context = require.context('./filter/', true, /\.js$/);
+context.keys().forEach( fileName => {
+  let name = camelcase(path.basename(fileName, '.js'));
+  let module = context(fileName);
+  cfgram.filter(name, module);
+});
