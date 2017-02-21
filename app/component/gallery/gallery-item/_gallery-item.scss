@@ -17,4 +17,18 @@
     font-size: 0.8em;
     float: right;
   }
+
+  .bold-weight {
+    font-weight: 700;
+  }
+
+  .expand-markup {
+    &:hover {
+      color: $button-primary;
+    }
+  }
+
+  .hide-expand-markup {
+    display: none;
+  }
 }

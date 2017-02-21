@@ -17,13 +17,21 @@
     line-height: 1.5;
   }
 
-  span {
+  p {
     color: $brand-primary;
     display: inline-block;
     width: 90px;
     float: left;
     &:last-child {
       color: $button-primary;
+      width: calc(100% - 95px);
+    }
+  }
+
+  span {
+    &:last-child {
+      float: left;
+      color: $brand-primary;
       width: calc(100% - 95px);
     }
   }
