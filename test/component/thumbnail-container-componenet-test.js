@@ -1,6 +1,6 @@
 'use strict';
 
-describe('thumbnail component', function() {
+describe('thumbnail container component', function() {
   beforeEach( () => {
     angular.mock.module('cfgram');
     angular.mock.inject(($rootScope, $componentController, $window, $httpBackend, authService) => {
@@ -35,18 +35,18 @@ describe('thumbnail component', function() {
       }
     };
 
-    let thumbnailControl = this.$componentController('thumbnail', null, mockBindings);
+    let thumbnailContainerControl = this.$componentController('thumbnailContainer', null, mockBindings);
 
-    expect(thumbnailControl.gallery.name).toEqual(mockBindings.gallery.name);
-    expect(thumbnailControl.gallery.desc).toEqual('test gallery description');
-    expect(thumbnailControl.gallery.pics.length).toEqual(1);
-    expect(thumbnailControl.pic.name).toEqual('test photo name');
-    expect(thumbnailControl.pic.imageURI).toEqual(mockBindings.pic.imageURI);
+    expect(thumbnailContainerControl.gallery.name).toEqual(mockBindings.gallery.name);
+    expect(thumbnailContainerControl.gallery.desc).toEqual('test gallery description');
+    expect(thumbnailContainerControl.gallery.pics.length).toEqual(1);
+    expect(thumbnailContainerControl.pic.name).toEqual('test photo name');
+    expect(thumbnailContainerControl.pic.imageURI).toEqual(mockBindings.pic.imageURI);
 
     this.$rootScope.$apply();
   });
 
-  describe('thumbnailControl.deletePhoto()', () => {
+  describe('thumbnailContainerControl.deletePhoto()', () => {
     it('should call the deletePhoto method and DELETE a photo', () => {
 
       this.authService.token = null;
@@ -83,9 +83,9 @@ describe('thumbnail component', function() {
 
       this.$httpBackend.expectDELETE(url, headers).respond(204);
 
-      let thumbnailControl = this.$componentController('thumbnail', null, mockBindings);
+      let thumbnailContainerControl = this.$componentController('thumbnailContainer', null, mockBindings);
 
-      thumbnailControl.gallery = {
+      thumbnailContainerControl.gallery = {
         _id: '1234567890',
         name: 'test gallery name',
         desc: 'test gallery description',
@@ -98,8 +98,8 @@ describe('thumbnail component', function() {
           }
         ]
       };
-      thumbnailControl.pic._id = '0987654321';
-      thumbnailControl.deletePhoto();
+
+      thumbnailContainerControl.deletePhoto(thumbnailContainerControl.gallery, '0987654321');
 
       this.$rootScope.$apply();
     });
