@@ -3,9 +3,10 @@
 describe('gallery item component', function() {
   beforeEach( () => {
     angular.mock.module('cfgram');
-    angular.mock.inject(($rootScope, $componentController, $httpBackend, authService) => {
+    angular.mock.inject(($rootScope, $componentController, $window, $httpBackend, authService) => {
       this.$rootScope = $rootScope;
       this.$componentController = $componentController;
+      this.$window = $window;
       this.$httpBackend = $httpBackend;
       this.authService = authService;
     });
@@ -32,6 +33,10 @@ describe('gallery item component', function() {
     });
 
     it('should call the deleteDone method on a gallery after galleryDelete', () => {
+
+      this.authService.token = null;
+      this.$window.localStorage.setItem('token', 'test-token');
+
       let url = `${__API_URL__}/api/gallery/1234567890`;
 
       let headers = {

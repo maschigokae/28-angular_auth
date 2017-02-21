@@ -3,9 +3,10 @@
 describe('thumbnail component', function() {
   beforeEach( () => {
     angular.mock.module('cfgram');
-    angular.mock.inject(($rootScope, $componentController, $httpBackend, authService) => {
+    angular.mock.inject(($rootScope, $componentController, $window, $httpBackend, authService) => {
       this.$rootScope = $rootScope;
       this.$componentController = $componentController;
+      this.$window = $window;
       this.$httpBackend = $httpBackend;
       this.authService = authService;
     });
@@ -47,6 +48,10 @@ describe('thumbnail component', function() {
 
   describe('thumbnailControl.deletePhoto()', () => {
     it('should call the deletePhoto method and DELETE a photo', () => {
+
+      this.authService.token = null;
+      this.$window.localStorage.setItem('token', 'test-token');
+
       let mockBindings = {
         gallery: {
           _id: '1234567890',

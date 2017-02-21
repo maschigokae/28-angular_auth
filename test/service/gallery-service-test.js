@@ -25,7 +25,7 @@ describe('gallery service', function() {
         Authorization: 'Bearer test-token'
       };
 
-      this.$httpBackend.expectPOST('http://localhost:8000/api/gallery', galleryData, headers)
+      this.$httpBackend.expectPOST(`${__API_URL__}/api/gallery`, galleryData, headers)
       .respond(200, {
         _id: '1234567890',
         username: 'testuser',
@@ -52,7 +52,7 @@ describe('gallery service', function() {
         Accept: 'application/json'
       };
 
-      this.$httpBackend.expectGET('http://localhost:8000/api/gallery', headers)
+      this.$httpBackend.expectGET(`${__API_URL__}/api/gallery`, headers)
       .respond(200);
 
       this.galleryService.fetchGalleries();
@@ -74,7 +74,7 @@ describe('gallery service', function() {
         Authorization: 'Bearer test-token'
       };
 
-      this.$httpBackend.expectPUT('http://localhost:8000/api/gallery/testid', updatedGalleryData, headers)
+      this.$httpBackend.expectPUT(`${__API_URL__}/api/gallery/testid`, updatedGalleryData, headers)
       .respond(200);
 
       this.galleryService.updateGallery('testid', updatedGalleryData);
@@ -91,7 +91,7 @@ describe('gallery service', function() {
         Accept: 'application/json, text/plain, */*'
       };
 
-      this.$httpBackend.expectDELETE('http://localhost:8000/api/gallery/testid', headers)
+      this.$httpBackend.expectDELETE(`${__API_URL__}/api/gallery/testid`, headers)
       .respond(204);
 
       this.galleryService.deleteGallery(galleryID);
