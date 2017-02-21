@@ -10,8 +10,9 @@ const uiRouter = require('angular-ui-router');
 const angularTouch = require('angular-touch');
 const angularAnimate = require('angular-animate');
 const angularFileUpload = require('ng-file-upload');
+const angularUiBootstrap = require('angular-ui-bootstrap');
 
-const cfgram = angular.module('cfgram', [angularTouch, angularAnimate, uiRouter, angularFileUpload]);
+const cfgram = angular.module('cfgram', [angularTouch, angularAnimate, uiRouter, angularFileUpload, angularUiBootstrap]);
 
 let context = require.context('./config/', true, /\.js$/);
 context.keys().forEach( fileName => {
