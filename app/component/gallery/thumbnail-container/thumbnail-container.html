@@ -2,12 +2,15 @@
   <h3>gallery: {{ thumbnailContainerControl.gallery.name }}</h3>
 
   <upload-photo gallery="thumbnailContainerControl.gallery"></upload-photo>
-
   <div>
-    <thumbnail
-      ng-repeat="file in thumbnailContainerControl.gallery.pics"
-      pic="file"
-      gallery="thumbnailContainerControl.gallery">
-    </thumbnail>
+    <div uib-carousel interval="4000" active="active" no-wrap="false" class="clearfix">
+      <div uib-slide
+        ng-repeat="file in thumbnailContainerControl.gallery.pics"
+        index="$index"
+        gallery="thumbnailContainerControl.gallery">
+        <img ng-src="{{ file.imageURI }}" alt="{{ file.desc }}">
+        <h4 class="delete-photo" ng-click="thumbnailContainerControl.deletePhoto(thumbnailContainerControl.gallery, file._id)">delete photo</h4>
+      </uib-slide>
+    </uib-carousel>
   </div>
 </div>

@@ -1,11 +1,26 @@
-// TODO: BUILD OUT THUMBNAIL CONTAINER STYLES
 @import "../../../scss/lib/theme/vars";
 
 .thumbnail-container {
+
+  img {
+    max-width: 100%;
+  }
 
   h3 {
     color: $brand-primary;
     font-weight: 700;
     margin: 2.5% 0 0 0;
+  }
+
+  .delete-photo {
+    color: $button-primary;
+    text-decoration: underline;
+    float: right;
+    margin-right: 15%;
+
+    &:hover {
+      color: $brand-primary;
+      cursor: pointer;
+    }
   }
 }
