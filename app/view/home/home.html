@@ -8,12 +8,14 @@
   <div class="gallery-item-container">
     <h4>galleries ordered alphabetically by gallery name</h4>
     <ul>
-      <gallery-item
-        ng-repeat="item in homeControl.galleries | search: homeControl.query | orderBy: 'name'"
-        gallery="item"
-        delete-done="homeControl.galleryDeleteDone(galleryData)"
-        ng-click="homeControl.currentGallery = item">
-      </gallery-item>
+      <uib-accordion>
+        <gallery-item
+          ng-repeat="item in homeControl.galleries | search: homeControl.query | orderBy: 'name'"
+          gallery="item"
+          delete-done="homeControl.galleryDeleteDone(galleryData)"
+          ng-click="homeControl.currentGallery = item">
+        </gallery-item>
+      </uib-accordion>
     </ul>
   </div>
 
