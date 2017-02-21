@@ -1,16 +1,16 @@
-<li class="gallery-item">
+<li class="gallery-item panel-default" uib-accordion-group heading="{{ galleryItemControl.gallery.name | uppercase }}">
   <div class="current-item" ng-if="!galleryItemControl.showEditGallery">
-    <div>
+    <div class="clearfix">
       <span class="gallery-name">name:</span>
       <span class="gallery-name">{{ galleryItemControl.gallery.name | uppercase }} (Contains <ng-pluralize count="galleryItemControl.gallery.pics.length" when="{'0': 'no photos.', '1': '{{ galleryItemControl.gallery.pics.length | number }} photo.', 'other': '{{ galleryItemControl.gallery.pics.length | number }} photos.'}"></ng-pluralize>)</span>
     </div>
 
-    <div>
+    <div class="clearfix">
       <span>description:</span>
       <span class="gallery-desc">{{ galleryItemControl.gallery.desc | lowercase | limitTo: galleryItemControl.limitFullDesc }}<span ng-click="galleryItemControl.expandGalleryDesc()">[Expand Description]</span></span>
     </div>
 
-    <div>
+    <div class="clearfix">
       <span>created:</span>
       <span class="gallery-created">{{ galleryItemControl.gallery.created | date: 'medium' }}</span>
     </div>
@@ -29,5 +29,5 @@
     class="button-small"
     ng-click="galleryItemControl.showEditGallery = !galleryItemControl.showEditGallery"
     ng-show="!galleryItemControl.showEditGallery">edit</button>
-  <div class="clearfix"></div>
 </li>
+<div class="clearfix"></div>
