@@ -3,9 +3,10 @@
 describe('create gallery component', function() {
   beforeEach( () => {
     angular.mock.module('cfgram');
-    angular.mock.inject(($rootScope, $componentController, $httpBackend, authService) => {
+    angular.mock.inject(($rootScope, $componentController, $window, $httpBackend, authService) => {
       this.$rootScope = $rootScope;
       this.$componentController = $componentController;
+      this.$window = $window;
       this.$httpBackend = $httpBackend;
       this.authService = authService;
     });
@@ -13,6 +14,10 @@ describe('create gallery component', function() {
 
   describe('createGalleryControl.createGallery()', () => {
     it('should call the createGallery method and POST a new gallery', () => {
+
+      this.authService.token = null;
+      this.$window.localStorage.setItem('token', 'test-token');
+
       let url = `${__API_URL__}/api/gallery`;
 
       let newGalleryData = {
