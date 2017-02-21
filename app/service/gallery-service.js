@@ -37,22 +37,6 @@ function galleryService($q, $log, $http, authService) {
     });
   };
 
-  service.deleteGalleries = function(galleryID, galleryData) {
-    $log.debug('galleryService.deleteGalleries()');
-
-    return authService.getToken()
-    .then( token => {
-      let url = `${__API_URL__}/api/gallery/${galleryID}`;
-      let config = {
-        headers: {
-          Accept: 'application/json',
-          Authorization: `Bearer ${token}`
-        }
-      };
-    });
-    // TODO: BUILD OUT DELETE FUNCTIONALITY
-  };
-
   service.fetchGalleries = function() {
     $log.debug('galleryService.fetchGalleries()');
 
