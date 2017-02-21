@@ -1,18 +1,21 @@
 <li class="gallery-item">
   <div class="current-item" ng-if="!galleryItemControl.showEditGallery">
     <div>
-      <span class="gallery-name">name:</span>
-      <span class="gallery-name">{{ galleryItemControl.gallery.name | uppercase }} (Contains <ng-pluralize count="galleryItemControl.gallery.pics.length" when="{'0': 'no photos.', '1': '{{ galleryItemControl.gallery.pics.length | number }} photo.', 'other': '{{ galleryItemControl.gallery.pics.length | number }} photos.'}"></ng-pluralize>)</span>
+      <p class="gallery-name">name:</p>
+      <p class="gallery-name"><span class="bold-weight">{{ galleryItemControl.gallery.name }}</span> (Contains <ng-pluralize count="galleryItemControl.gallery.pics.length" when="{'0': 'no photos.', '1': '{{ galleryItemControl.gallery.pics.length | number }} photo.', 'other': '{{ galleryItemControl.gallery.pics.length | number }} photos.'}"></ng-pluralize>)</p>
     </div>
 
     <div>
-      <span>description:</span>
-      <span class="gallery-desc">{{ galleryItemControl.gallery.desc | lowercase | limitTo: galleryItemControl.limitFullDesc }}<span ng-click="galleryItemControl.expandGalleryDesc()">[Expand Description]</span></span>
+      <p>description:</p>
+      <p class="gallery-desc">{{ galleryItemControl.gallery.desc | limitTo: galleryItemControl.limitFullDesc }}
+        <span ng-class="galleryItemControl.limitedDesc ? 'bold-weight' : 'hide-expand-markup'">...</span>
+        <span ng-click="galleryItemControl.expandGalleryDesc()" ng-class="galleryItemControl.limitedDesc ? 'expand-markup' : 'hide-expand-markup'">[Expand Description]</span>
+      </p>
     </div>
 
     <div>
-      <span>created:</span>
-      <span class="gallery-created">{{ galleryItemControl.gallery.created | date: 'medium' }}</span>
+      <p>created:</p>
+      <p class="gallery-created">{{ galleryItemControl.gallery.created | date: 'medium' }}</p>
     </div>
   </div>
 
