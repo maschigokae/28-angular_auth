@@ -42,7 +42,7 @@ describe('auth service', function() {
         Authorization: `Basic ${base64}`
       };
 
-      this.$httpBackend.expectGET('http://localhost:8000/api/login', headers)
+      this.$httpBackend.expectGET(`${__API_URL__}/api/login`, headers)
       .respond(200, base64);
 
       this.authService.login(testUser)
@@ -67,7 +67,7 @@ describe('auth service', function() {
         Accept: 'application/json'
       };
 
-      this.$httpBackend.expectPOST('http://localhost:8000/api/signup', testUser, headers)
+      this.$httpBackend.expectPOST(`${__API_URL__}/api/signup`, testUser, headers)
       .respond(200, 'test-token');
       // TOKEN RETURNED IN LAST AUTH SERVICE DESCRIBE BLOCK CASCADES TO GALLERY SERVICE TESTS
 

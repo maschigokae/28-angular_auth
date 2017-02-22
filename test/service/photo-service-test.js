@@ -1,3 +1,0 @@
-'use strict';
-
-// TODO: BUILD OUT PHOTO SERVICE TESTS
